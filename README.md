@@ -29,15 +29,12 @@ To formulate a C program to convert a decimal number into its binary equivalent 
 # Program:
 ```
 #include <stdio.h>
-
 int main()
 {
     int num, rem, binary[32];
     int i = 0, k;
-
     printf("Enter a decimal number: ");
     scanf("%d", &num);
-
     while (num > 0)
     {
         rem = num % 2;
@@ -45,16 +42,13 @@ int main()
         num = num / 2;
         i++;
     }
-
     printf("Binary equivalent: ");
     for (k = i - 1; k >= 0; k--)
         printf("%d", binary[k]);
-
-    return 0;
 }
 ```
 # Output:
-<img width="442" height="194" alt="image" src="https://github.com/user-attachments/assets/0a9a3f7d-3627-49fc-9aef-9aa6978efa98" />
+<img width="442" height="207" alt="image" src="https://github.com/user-attachments/assets/7472cfd2-4b76-40b0-b8ec-abd495fc4e85" />
 
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
@@ -96,25 +90,20 @@ Thus, the program was implemented and executed successfully, and the required ou
 # Program:
 ```
 #include <stdio.h>
-
 int main()
 {
     int a[10][10], m, i, j, k;
     int min, max, col, found = 0;
-
     printf("Enter order of square matrix: ");
     scanf("%d", &m);
-
     printf("Enter matrix elements:\n");
     for (i = 0; i < m; i++)
         for (j = 0; j < m; j++)
             scanf("%d", &a[i][j]);
-
     for (i = 0; i < m; i++)
     {
         min = a[i][0];
         col = 0;
-
         for (j = 1; j < m; j++)
         {
             if (a[i][j] < min)
@@ -123,14 +112,12 @@ int main()
                 col = j;
             }
         }
-
         max = a[0][col];
         for (k = 1; k < m; k++)
         {
             if (a[k][col] > max)
                 max = a[k][col];
         }
-
         if (min == max)
         {
             printf("Saddle Point found at position (%d, %d)\n", i, col);
@@ -139,15 +126,13 @@ int main()
             break;
         }
     }
-
     if (!found)
         printf("No Saddle Point found");
-
-    return 0;
 }
 ```
 # Output:
-<img width="435" height="320" alt="image" src="https://github.com/user-attachments/assets/22b99eb9-9cec-46e0-9d91-b1e7773d35c2" />
+<img width="521" height="284" alt="image" src="https://github.com/user-attachments/assets/b8f43d05-0c98-45cf-9d61-aa5f04e04574" />
+
 
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
@@ -184,32 +169,25 @@ Thus, the program was implemented and executed successfully, and the required ou
 # Program:
 ```
 #include <stdio.h>
-
 int main()
 {
     char s[100], d[100];
     int i, j = 0, len = 0;
-
     printf("Enter a string: ");
     scanf("%[^\n]s", s);
-
     while (s[len] != '\0')
         len++;
-
     for (i = len - 1; i >= 0; i--)
     {
         d[j] = s[i];
         j++;
     }
     d[j] = '\0';
-
     printf("Reversed string: %s", d);
-
-    return 0;
 }
 ```
 # Output:
-<img width="454" height="263" alt="image" src="https://github.com/user-attachments/assets/78c0dd68-16a3-4a20-9604-fcec8eb71a32" />
+<img width="457" height="194" alt="image" src="https://github.com/user-attachments/assets/486bd203-98a4-41ec-9c5b-057e98c6baf4" />
 
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
@@ -247,18 +225,14 @@ Thus, the program was implemented and executed successfully, and the required ou
 ```
 #include <stdio.h>
 #include <string.h>
-
 int main()
 {
     char s[100];
     int visited[256] = {0};
     int i, j, count, n;
-
     printf("Enter a string: ");
     scanf("%[^\n]", s);
-
     n = strlen(s);
-
     for (i = 0; i < n; i++)
     {
         if (visited[(unsigned char)s[i]] == 0)
@@ -273,11 +247,10 @@ int main()
             visited[(unsigned char)s[i]] = 1;
         }
     }
-    return 0;
 }
 ```
 # Output:
-<img width="429" height="439" alt="image" src="https://github.com/user-attachments/assets/cc5f4cf2-8cff-459a-8bc1-821df13553f0" />
+<img width="608" height="350" alt="image" src="https://github.com/user-attachments/assets/d6eca693-16c7-45ed-bff1-9386bfe86a72" />
 
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
@@ -314,15 +287,12 @@ Thus, the program was implemented and executed successfully, and the required ou
 ```
 #include <stdio.h>
 #include <string.h>
-
 int main()
 {
     char str[200], words[50][50];
     int i = 0, j = 0, k = 0, n, flag;
-
     printf("Enter a string: ");
     scanf("%[^\n]s", str);
-
     for (i = 0; str[i] != '\0'; i++)
     {
         if (str[i] != ' ')
@@ -338,14 +308,11 @@ int main()
     }
     words[j][k] = '\0';
     n = j + 1;
-
     printf("String after removing duplicate words:\n");
-
     for (i = 0; i < n; i++)
     {
         if (words[i][0] == '\0')
             continue;
-
         flag = 1;
         for (j = i + 1; j < n; j++)
         {
@@ -356,12 +323,11 @@ int main()
         if (flag)
             printf("%s ", words[i]);
     }
-
-    return 0;
 }
 ```
 # Output:
-<img width="632" height="230" alt="image" src="https://github.com/user-attachments/assets/f45a5d13-34ec-4da7-bc19-59fb088462e3" />
+<img width="626" height="263" alt="image" src="https://github.com/user-attachments/assets/1e398757-1724-460a-b8bc-21fe11d24aad" />
+
 
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
